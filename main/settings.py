@@ -47,6 +47,13 @@ INSTALLED_APPS = [
 
     'rest_framework.authtoken',
     'dj_rest_auth',
+
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'dj_rest_auth.registration',
+   
 ]
 
 MIDDLEWARE = [
@@ -59,6 +66,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
+
+SITE_ID = 1
 
 ROOT_URLCONF = 'main.urls'
 
@@ -139,6 +148,18 @@ INTERNAL_IPS = [
 "127.0.0.1",
 
 ]
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = "axelwickx@gmail.com"
+EMAIL_HOST_PASSWORD = "ztdekoaajpeawquj"
+
+
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 
 REST_FRAMEWORK = {
