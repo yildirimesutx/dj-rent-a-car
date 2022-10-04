@@ -18,10 +18,10 @@ class Car(models.Model):
     
 class Reservation(models.Model):
     client = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user")
-    car = models.ForeignKey(Car, on_delete=models.CASCADE,related_name="cars")
+    car = models.OneToOneField(Car, on_delete=models.CASCADE,related_name="cars")
     rent_start_date =models.DateTimeField()
     rent_end_date = models.DateTimeField()
 
-    def __str__(self):
-        return f"{self.client}- {self.car}"
+    # def __str__(self):
+    #     return f"{self.client}- {self.car}"
     
