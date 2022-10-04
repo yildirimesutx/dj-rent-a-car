@@ -17,8 +17,8 @@ class Car(models.Model):
         return f"{self.car_brand}-{self.car_model}"
     
 class Reservation(models.Model):
-    client = models.ForeignKey(User, on_delete=models.CASCADE)
-    car = models.OneToOneField(Car, on_delete=models.CASCADE,related_name="cars")
+    client = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user")
+    car = models.ForeignKey(Car, on_delete=models.CASCADE,related_name="cars")
     rent_start_date =models.DateTimeField()
     rent_end_date = models.DateTimeField()
 
