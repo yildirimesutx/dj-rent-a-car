@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets
 from .models import Car, Reservation
-from .serializers import CarSerializer, ReservationSerializer
+from .serializers import CarSerializer, CarReservationSerializer
 from rest_framework.permissions import  IsAdminUser
 from .permission import IsStafforReadOnly
 from rest_framework.generics import  ListCreateAPIView, RetrieveUpdateDestroyAPIView
@@ -30,7 +30,7 @@ class CarView(viewsets.ModelViewSet):
 
 class ReservationView(viewsets.ModelViewSet):
     queryset = Reservation.objects.all()
-    serializer_class = ReservationSerializer
+    serializer_class = CarReservationSerializer
 
 
     # postmanda user un reservation yaptıkları geldi, template de hata döndü

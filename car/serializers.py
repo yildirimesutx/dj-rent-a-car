@@ -8,7 +8,7 @@ from .models import Car, Reservation
 
 
 
-class ReservationSerializer(serializers.ModelSerializer):
+class CarReservationSerializer(serializers.ModelSerializer):
    
     # car = serializers.StringRelatedField()
      #reservation modelindeki car fieldi default id geliyor, bu şekilde car modeldeki str geldi.
@@ -28,7 +28,7 @@ class ReservationSerializer(serializers.ModelSerializer):
 
 class CarSerializer(serializers.ModelSerializer):
     # cars = serializers.StringRelatedField()
-    cars = ReservationSerializer(read_only=True)
+    cars = CarReservationSerializer(read_only=True)
     # cars = ReservationSerializer() # default olarak write_only geliyor, create ederken ihtiyacimiz olmadigindan read_only yaptık 
     class Meta:
         model = Car

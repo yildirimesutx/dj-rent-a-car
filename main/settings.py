@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'user',
     'car',
+    'flight',
     'rest_framework',
     "debug_toolbar",
     'drf_yasg',
